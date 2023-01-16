@@ -1,6 +1,6 @@
 import random
 
-import NeuralNetwork as nn
+from algorithms import NeuralNetwork as nn
 import pandas as pd
 import numpy as np
 
@@ -10,7 +10,7 @@ secret_layer_count = 2
 generation_count = 1
 
 
-df = pd.read_csv('ExampleData.csv', index_col=0)
+df = pd.read_csv('../datas/ExampleData.csv', index_col=0)
 
 df = np.array(pd.DataFrame(df, columns = ["volt","rotate","pressure","vibration"]))
 

@@ -27,12 +27,12 @@ class AITONeuralNetwork:
         self.split_data()
 
     def load_model(self):
-        with open('AITO.dat', 'rb') as f:
+        with open('../trainedModels/AITO.dat', 'rb') as f:
             self = pickle.load(f)
             return self
 
     def save_model(self):
-        with open('AITO.dat', 'wb') as f:
+        with open('../trainedModels/AITO.dat', 'wb') as f:
             pickle.dump(self, f)
 
     def create_network_weight(self):
@@ -173,10 +173,7 @@ class AITONeuralNetwork:
             self.generate_new_population(output_y, current_result)
 
     def predict(self, input_x):
-        if self.inputIsNotValid(input_x):
-            print('\033[1;31m' + "Invalid input, shape of data doesn't fit model.")
-            print('\033[1;31m' + "Check predict function.")
-            return []
+  
         y = []
 
         t = 0
